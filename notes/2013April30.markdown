@@ -1,0 +1,13 @@
+Notes, Thoughts, and Whatnot
+=
+Here, I document my various thoughts, actions, and whatnot throughout
+the day. 
+
+The Morning
+=
+The morning begins as usual; I find myself on a relatively empty BART
+train working on the MLR rails platform
+
+* This has bothered me for a while, but why the hell doesn't Sublime Text
+  Ruby-Rspec package correctly indent the end key after for the describe
+  block? What the fuck?! Fix this bug please.

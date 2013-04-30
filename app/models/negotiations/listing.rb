@@ -21,10 +21,11 @@ module Negotiations
           listing.thumbnails = record.thumbnails
           listing.price = record.price
           listing.seller = record.seller
+          listing.listing_id = record.id
         end
       end
     end
 
-    attr_accessor :title, :pictures, :thumbnails, :price, :seller
+    attr_accessor :title, :pictures, :thumbnails, :price, :seller, :listing_id
   end
 end

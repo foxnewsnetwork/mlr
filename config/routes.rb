@@ -1,5 +1,4 @@
 Mlr::Application.routes.draw do
-  devise_for :sellers
 
   get "development/debug"
 
