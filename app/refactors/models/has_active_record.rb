@@ -2,6 +2,7 @@ module Models
   module HasActiveRecord
     def normalize(object_or_id)
       return object_or_id if object_or_id.is_a? self
+      return _from_record(object_or_id) if object_or_id.is_a? _record_model
       _load_from_record object_or_id
     end
 

@@ -2,24 +2,9 @@ require 'spec_helper'
 
 describe Negotiations do
   before :each do
-    @seller = Negotiations::Company.new.tap do |c|
-      c.name = "test seller company"
-      c.email = "test@company.gov"
-      c.company_id = 12
-    end
-    @buyer = Negotiations::Company.new.tap do |c|
-      c.name = "Test buyer company"
-      c.email = "buyer@company.org"
-      c.company_id = 10
-    end
-    @listing = Negotiations::Listing.new.tap do |l|
-      l.title = "test"
-      l.pictures = []
-      l.thumbnails = []
-      l.price = 10
-      l.seller = @seller
-      l.listing_id = 1
-    end
+    @seller = ChineseFactory.company
+    @buyer = ChineseFactory.company
+    @listing = ChineseFactory.listing @seller
   end
   describe "::from_discussion_id" do
     let(:discussion) { Negotiations.from_discussion_id @discussion_id }

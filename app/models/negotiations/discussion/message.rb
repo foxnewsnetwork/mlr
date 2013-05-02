@@ -2,11 +2,24 @@ module Negotiations
   class Discussion
     class Message
       attr_accessor :from, :content
+      extend ::Models::HasActiveRecord
+      error_model = Message::Error
+      record_model = Message::Record
+      class << self
+        private
+        def _from_record(record)
+          new.tap do |message|
+            message.from = record.company
+            message.content = record.content
+          end
+        end
+      end
+
 
       class << self
-        def from_person_with_text(person, text)
+        def from_company_with_text(company, text)
           new.tap do |message|
-            message.from = person
+            message.from = company
             message.content = text
           end
         end

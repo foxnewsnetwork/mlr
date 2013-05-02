@@ -1,3 +1,63 @@
 Today's Journal
 =
 Wednesday morning 9:50 train; sunny day. Would rather be hiking
+
+High Schoolers out on a field trip in San Leandro. What innocent
+and happy times high school was (in retrospect, of course)!
+
+At work, stuff for production got pushed. Now just waiting for errors
+to hopefully not pour in.
+
+Fortune Cookies of the Day
+=
+ _________________________________________
+/ Your manuscript is both good and        \
+| original, but the part that is good is  |
+| not original and the part that is       |
+\ original is not good. -- Samuel Johnson /
+ -----------------------------------------
+
+Conversation From the Guy Behind Me On The Train
+=
+From what I've been gathering
+
+  * Peggie is in the last days of her life
+  * Let her last few days of her life be something away from pain
+  * Let her live without rules for she is not bound to this earth any longer
+
+I don't know who this man is, or who he could be talking to on his phone,
+but it is obviously a deep heartfelt conversation full of complexed emotions
+dealing with the fragility of life and the collapsing mortal coil that has
+obviously released its grip on someone.
+
+I don't know who these people are, and I am sure I will never see or hear
+from him again after I get off this train... but best of luck to him,
+Peggie, and whomever he is talking to. May you find both meaning and
+happiness wherever it is your life's tracks may take you.
+
+On Model Stubs
+=
+Perhaps as a consequence of all those articles on testing I've been reading,
+I've come to the conclusion that testing business logic should be done with-
+out actually connecting to a real database (as how I persist my data should
+be completely separate from how my business logic should work). 
+
+Unfortunately, such functionality is not the forte of the the factory 
+framework (factorygirl) that I am using. Consequently, I am forced to roll 
+my own factory-esque gem. In particular, I need something to generate fake-
+ish data that looks and operates like the real thing but without any actual
+durability and should be a lot cheaper to make than the real thing.
+
+It should be a complement to FactoryGirl, so I naturally went with the best
+name I could come up with: ChineseFactory
+
+Problems at Work
+=
+Find a catepillar in my lunch salad, truly disgusting.
+
+Stuff I See On The Train Back From Work
+=
+8:20pm, on my way back home on the Dublin Pleasaton train, working on the mlr
+project getting tests to pass. Ahead of me, standing by the entrance, two of
+the touchy-feeliest gay guys I've ever seen this hour at after work on the train.
+They leave off at Lake Merritt. I bet they going to dock later tonight.
