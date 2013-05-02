@@ -29,7 +29,28 @@ describe Negotiations::Discussion do
         Negotiations::Discussion.record_model = Negotiations::Discussion::Record
       end
       specify { discussion.should_not be_shit }
-
+      describe "#offer_from" do
+        let(:offer) { discussion.offer_from @buyer, @price }
+        before :each do
+          @price = 15
+        end
+        it "should return a new offer" do
+          offer.should be_a Negotiations::Offer
+        end
+        it "should be from the right buyer with the right price" do
+          offer.price.should eq @price
+          offer.from.should eq @buyer
+        end
+      end
+      describe "#message_from" do
+        let(:message) { discussion.message_from @message }
+      end
+      describe "#accept_offer" do
+        let(:offer) { discussion.accept_offer @offer }
+      end
+      describe "#decline_offer" do
+        let(:offer) { discussion.decline_offer @offer }
+      end
     end
   end
 end

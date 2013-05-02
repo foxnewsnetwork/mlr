@@ -31,8 +31,10 @@ module Negotiations
       end
     end
 
-    def offer_from(offer, person)
-      self.offers << Offer.from_person_with_price(person, price)
+    def offer_from(company, price)
+      offer = Offer.from_company_with_price(company, price)
+      self.offers << offer
+      return offer
     end
 
     def message_from(string, person)

@@ -18,10 +18,10 @@ module Negotiations
         from_person_with_price(listing.seller, listing.price)
       end
 
-      def from_person_with_price(person, price)
+      def from_company_with_price(company, price)
         new.tap do |offer|
           offer.price = price
-          offer.from = person
+          offer.from = company
         end
       end
     end
