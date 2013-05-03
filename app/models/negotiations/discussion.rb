@@ -37,16 +37,18 @@ module Negotiations
       return offer
     end
 
-    def message_from(string, person)
-      self.messages << Discussion::Message.from_person_with_text(person, string)
+    def message_from(company, text)
+      msg = Discussion::Message.from_company_with_text(company, text)
+      self.messages << msg
+      return msg
     end
 
-    def accept_offer(offer, person=nil)
-      Offer.normalize(offer).accept_offer person
+    def accept_offer(company, offer)
+      Offer.normalize(offer).accept_offer company
     end
 
-    def decline_offer(offer, person=nil)
-      Offer.normalize(offer).decline_offer person
+    def decline_offer(company, offer)
+      Offer.normalize(offer).decline_offer company
     end
 
     def shit?

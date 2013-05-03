@@ -16,3 +16,7 @@
 
 # Ignore vim crap in notes
 /notes/*.un~
+
+# Ignore coverage files
+coverage
+coverage/*

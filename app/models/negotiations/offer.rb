@@ -1,6 +1,6 @@
 module Negotiations
   class Offer
-    attr_accessor :price, :from
+    attr_accessor :price, :from, :status
     extend Models::HasActiveRecord
     _record_model = Offer::Record
     _error_model = Offer::Error
@@ -14,16 +14,31 @@ module Negotiations
       end
     end
     class << self
-      def default_from_listing(listing)
-        from_person_with_price(listing.seller, listing.price)
-      end
-
       def from_company_with_price(company, price)
         new.tap do |offer|
           offer.price = price
           offer.from = company
+          offer.status = Offer::Status.from_company_and_state company, :new
         end
       end
+    end
+
+    def accepted?
+      self.status.state == :accepted
+    end
+
+    def accept_offer!(company)
+      self.status = Offer::Status::from_company_and_state company, :accepted
+      return self
+    end
+
+    def declined?
+      self.status.state == :declined
+    end
+
+    def decline_offer!(company)
+      self.status = Offer::Status::from_company_and_state company, :declined
+      return self
     end
   end
 end

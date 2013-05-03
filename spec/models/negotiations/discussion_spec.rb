@@ -41,9 +41,25 @@ describe Negotiations::Discussion do
           offer.price.should eq @price
           offer.from.should eq @buyer
         end
+        it "should increase the amount of offers in stored in the discussion" do
+          expect { offer }.to change(discussion.offers, :count).by 1
+        end
       end
       describe "#message_from" do
-        let(:message) { discussion.message_from @message }
+        let(:message) { discussion.message_from @buyer, @message }
+        before :each do
+          @message = Faker::Company.bs
+        end
+        it "should return a new message" do
+          message.should be_a Negotiations::Discussion::Message
+        end
+        it "should be the right message" do
+          message.content.should eq @message
+          message.from.should eq @buyer
+        end
+        it "should increase the amount of messages associated with this discussion" do
+          expect { message }.to change(discussion.messages, :count).by 1
+        end
       end
       describe "#accept_offer" do
         let(:offer) { discussion.accept_offer @offer }
