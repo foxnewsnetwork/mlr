@@ -21,6 +21,9 @@
 require 'spec_helper'
 
 describe Negotiations::Company::Record do
+  before :each do
+    Negotiations::Company.record_model = nil
+  end
   let(:api) { Negotiations::Company::Record }
 
   context "sanity" do

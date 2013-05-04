@@ -15,7 +15,7 @@ module Negotiations
         private
         def _normalize_state!(state)
           return state if ValidStates.include? state
-          throw "#{state} is not a valid offer state"
+          raise NameError.new "#{state} is not a valid offer state"
         end
 
         def _normalize_company(company)

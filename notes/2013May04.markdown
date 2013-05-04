@@ -4,3 +4,22 @@ First is the first, I need to skirt the issue of why my computer locks
 up and runs into shit problems with my current state of rspec. Then, it's
 off to fagging out in Mountain View for the afternoon and a movie later at
 night
+
+Attempt #1: Disable the sqlite-hitting tests
+=
+## Hypothesis: Whatever is causing the lock originates from hitting the sql
+  lite database, thus disabling it should eliminate the lockdowns
+
+## Procedure: Gonna run the tests 50 times with sqlite disabled and see if
+  it locks up.
+
+## Results: After running it for maybe 15 times, there were no lock ups and
+  I got tremendously bored by the retarded repetition. Time to move on. As
+  the case is, it is apparently sqlite fucking up.
+
+## Solution 1: Try setting the value of record_model back to nil explicitly
+
+## Hypothesis: Setting the record_model back to nil will cause the code to go
+  back to using the defaults to find the record model (well, I KNOW it will do
+  that, but I just want to test if the descrepenacy in setting that global state
+  was the core problem)
