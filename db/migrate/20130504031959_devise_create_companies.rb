@@ -1,6 +1,6 @@
-class DeviseCreateSellers < ActiveRecord::Migration
+class DeviseCreateCompanies < ActiveRecord::Migration
   def change
-    create_table(:sellers) do |t|
+    create_table(:companies) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
@@ -33,15 +33,15 @@ class DeviseCreateSellers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
-      t.string :username
+      t.string :name
 
       t.timestamps
     end
 
-    add_index :sellers, :email,                :unique => true
-    add_index :sellers, :reset_password_token, :unique => true
-    # add_index :sellers, :confirmation_token,   :unique => true
-    # add_index :sellers, :unlock_token,         :unique => true
-    # add_index :sellers, :authentication_token, :unique => true
+    add_index :companies, :email,                :unique => true
+    add_index :companies, :reset_password_token, :unique => true
+    # add_index :companies, :confirmation_token,   :unique => true
+    # add_index :companies, :unlock_token,         :unique => true
+    # add_index :companies, :authentication_token, :unique => true
   end
 end

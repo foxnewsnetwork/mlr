@@ -3,7 +3,7 @@ class FakeRecord
     # id < 666 = real
     # id >= 666 = fake
     def method_missing(method, *args)
-      id = args.first || 1
+      id = args.first.to_i || 1
       if id < 666
         new
       else

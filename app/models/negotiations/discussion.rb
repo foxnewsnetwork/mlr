@@ -3,8 +3,6 @@ module Negotiations
     attr_accessor :listing, :messages, :buyer, :seller, :offers, :discussion_id
     
     extend ::Models::HasActiveRecord
-    self.record_model = Discussion::Record
-    self.error_model = Discussion::Error
     class << self
       private
       def _from_record(record)
@@ -43,12 +41,12 @@ module Negotiations
       return msg
     end
 
-    def accept_offer(company, offer)
-      Offer.normalize(offer).accept_offer company
+    def accept_offer!(company, offer)
+      Offer.normalize(offer).accept_offer! company
     end
 
-    def decline_offer(company, offer)
-      Offer.normalize(offer).decline_offer company
+    def decline_offer!(company, offer)
+      Offer.normalize(offer).decline_offer! company
     end
 
     def shit?

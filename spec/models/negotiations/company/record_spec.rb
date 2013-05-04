@@ -18,11 +18,21 @@
 #  updated_at             :datetime         not null
 #
 
-module Negotiations
-  class Company
-    class Record < ::ActiveRecord::Base
-      self.table_name = "companies"
-      attr_accessible :name, :email
+require 'spec_helper'
+
+describe Negotiations::Company::Record do
+  let(:api) { Negotiations::Company::Record }
+
+  context "sanity" do
+    before :each do
+      @company_record = FactoryGirl.create :company
+    end
+
+    specify { @company_record.should be_a api }
+    describe "#normalize" do
+      let(:company) { Negotiations::Company.normalize @company_record }
+      specify { company.should be_a Negotiations::Company }
+      specify { company.company_id.should eq @company_record.id }
     end
   end
 end

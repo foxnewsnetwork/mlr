@@ -18,11 +18,8 @@
 #  updated_at             :datetime         not null
 #
 
-module Negotiations
-  class Company
-    class Record < ::ActiveRecord::Base
-      self.table_name = "companies"
-      attr_accessible :name, :email
-    end
-  end
+require 'spec_helper'
+
+describe Company do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -1,5 +1,7 @@
 Mlr::Application.routes.draw do
 
+  devise_for :companies
+
   get "development/debug"
 
   # The priority is based upon order of creation:

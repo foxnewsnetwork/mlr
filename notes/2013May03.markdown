@@ -1,0 +1,55 @@
+On Love, Happiness, and Meaning in the Big City
+=
+Last night, I chanced upon encountering my female housemate as I was returning
+home after work. It was earlier than usual (8:00 or so) and so I sat at the
+kitchen counter and simply talked to her for a good long time. Although we spoke
+of the many vicissitudes of life, work, and our thoughts, the thing that, 
+particularly stuck with me was her almost casual statement of her friends' (and
+possibly her own) attitude toward relationships
+
+  > For many of my friends, [this] is their first seriously long term relationship
+  > but they feel iffy about it because they find themselves wondering "can I do
+  > better?"
+
+This stuck with me because just the other day, I read a piece by Paul (will provide
+link when I'm off the train and have internet access) about avoiding burnout and
+finding meaning that suggested something extremely similar in the attitudes city-
+folk in relationships.
+
+  > I can do better
+
+These four simple words have become a systemic plague on the city-dwelling psychology.
+Regardless of life-situations and social-economic circumstance, we've become obsessed
+with the quantification of our results. We metric ourselves the same way we'd measure
+some science experiment or A/B test with full confidence that if we somehow try harder,
+become "better" (whatever that means), and get busier, we'd somehow automatically
+become "more successful" (once again, what does that even mean? More money?).
+
+Just as John [Last Name] writes in Chimera (as quoted in SICP), the key to the treasure
+is the treasure, so too is the journey to wealth the greatest wealth of all. This may
+sound defeatist of me, but given the length of our lives compared to the passing eons,
+would anyone (most importantly ourselves) truly care about the title of "lead X", "CEO
+of Y", or "Chairman of Z" that we could attain in the short span of our youths? Surely
+not in the long term... yet here we are, locked into 80hour weekly merciless struggle
+for position, title, money, and "doing better".
+
+As a consequence, love is dead in the city. There is none of that spiritual connection
+between souls we are told once existed but now seems to mostly wind up in the pages of
+Twilight (not that I read the book, I just hear they fuck a lot toward the end). In its
+place, people do not fall in love, they fall in settle. They grow familiar, attached,
+and come to a calm understanding devotion to their partner. In the place of what used
+to a touch of literary magic is now simply city life.
+
+  > With all the new exciting innovation disrupting our daily routine, life has some-
+  > how managed to become a significantly more dull and repetitive.
+
+Something Nice From Russia
+=
+[link](http://kottke.org/13/05/tender-moments-caught-on-russian-dash-cams)
+
+Some Weird Shit With Indeterministic Testing
+=
+I'm not sure what exactly I've done, but when run a in a certain order, my tests lock up
+and seem to go nowhere. Something is terribly amiss and I have no idea what could be the
+source of it. But this essentially means I'm trying to be too clever with how I'm setting
+things up

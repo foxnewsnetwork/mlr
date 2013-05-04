@@ -1,20 +1,31 @@
+# == Schema Information
+#
+# Table name: companies
+#
+#  id                     :integer          not null, primary key
+#  email                  :string(255)      default(""), not null
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  name                   :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
 module Negotiations
   class Company
     attr_accessor :name, :email, :company_id
-
+    extend ::Models::HasActiveRecord
+    error_model = Error
+    record_model = Record
     class << self
-      def normalize(company_or_id)
-        return company_or_id if company_or_id.is_a? Company
-      end
-
       private
-
-      def _load_from_record(id)
-        record = Company::Record.find_by_id(id)
-        return Company::Error.from_404 if record.nil?
-        _from_record record
-      end
-
       def _from_record(record)
         new.tap do |c|
           c.name = record.name

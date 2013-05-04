@@ -6,6 +6,7 @@ her. naze nara, enishi ga dekite nai kara
 
 Crazy-ass old guy in the seat in front of me keeps screaming loudly "aah",
 and then going back to sleep. Must be having some sort of nightmare
+
 First Fortune Usually Best Fortune
 =
  ________________________________________
@@ -19,3 +20,29 @@ First Fortune Usually Best Fortune
             (__)\       )\/\
                 ||----w |
                 ||     ||
+
+On ActiveRecord Models
+=
+Top amongst the terrible ideas that Rails has insiminated amongst the general
+web-dev populace is the convention of the one-to-one table-to-model relationship.
+Rails scaffolds and generators consistently lump activerecord together with the
+core business model of a given application. Perhaps for the simplest fizzbuzz
+playaround apps, the disadvantages of this sort of approach is not as obvious,
+but as soon as the projects gets a little bigger and the developer begins worry-
+ing a bit more about modularity, the sheer idiocy of this naive approach shines
+through.
+
+First and foremost, lumping one's business logic directly with the logic of
+persisting state implies that one's persistance (i.e. db sql) skills should be
+dba-level top-tier. Else, any sort of change of normalization, cache-layer
+introduction, and whatever else immediately deprecates one's business logic
+in addition to the current database logic.
+
+The marriage of table-to-model also suggests that, all inconsistencies in one's
+database must then be handled spread out through one's model. This leads to the
+infamous conditional if-statement clusterfuck that produces such incomprehensible
+shit such as iOffer's 750+ line long methods.
+
+Finally, a particular weakness of Rails's implementation of ActiveRecord is the
+preference of using nil to represent failed lookups instead of the more helpful
+maybe. Returning nils 

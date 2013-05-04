@@ -23,11 +23,9 @@ describe Negotiations::Discussion do
         ::FakeRecord.any_instance.should_receive(:buyer).and_return(@buyer)
         ::FakeRecord.any_instance.should_receive(:messages).and_return(@messages)
         ::FakeRecord.any_instance.should_receive(:offers).and_return(@offers)
-        Negotiations::Discussion.record_model = ::FakeRecord
       end
-      after :each do
-        Negotiations::Discussion.record_model = Negotiations::Discussion::Record
-      end
+      before(:all) { Negotiations::Discussion.record_model = ::FakeRecord }
+      after(:all) { Negotiations::Discussion.record_model = Negotiations::Discussion::Record }
       specify { discussion.should_not be_shit }
       describe "#offer_from" do
         let(:offer) { discussion.offer_from @buyer, @price }
@@ -61,11 +59,27 @@ describe Negotiations::Discussion do
           expect { message }.to change(discussion.messages, :count).by 1
         end
       end
-      describe "#accept_offer" do
-        let(:offer) { discussion.accept_offer @offer }
+      describe "#accept_offer!" do
+        let(:offer) { discussion.accept_offer! @company, @offer }
+        before :each do
+          @offer = ChineseFactory.offer
+          @company = ChineseFactory.company
+        end
+        it "should return the accepted offer" do
+          offer.should be_a Negotiations::Offer
+          offer.should be_accepted
+        end
       end
-      describe "#decline_offer" do
-        let(:offer) { discussion.decline_offer @offer }
+      describe "#decline_offer!" do
+        let(:offer) { discussion.decline_offer! @company, @offer }
+        before :each do
+          @offer = ChineseFactory.offer
+          @company = ChineseFactory.company
+        end
+        it "should return the accepted offer" do
+          offer.should be_a Negotiations::Offer
+          offer.should be_declined
+        end
       end
     end
   end
