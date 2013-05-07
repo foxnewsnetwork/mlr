@@ -8,3 +8,10 @@ TL;DR from part 1:
 
 My point is the exactly just this: if you don't love your work and your work
 envirnoment, then it's time to try your dang hardest to change that
+
+On Rails File Layout
+=
+Things to do
+
+  * Structure for modularity, not just conventional rails organization (stack-
+    ing in models, controllers, assets, etc. produces immobile crap)
