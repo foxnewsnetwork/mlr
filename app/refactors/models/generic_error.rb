@@ -3,7 +3,7 @@ module Models
     attr_accessor :errors
       class << self
         def model
-          throw "Implement me!"
+          raise NotImplementedError.new
         end
 
         def from_404(id=nil)

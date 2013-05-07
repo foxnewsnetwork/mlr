@@ -2,14 +2,12 @@ module Negotiations
   class Offer
     attr_accessor :price, :from, :status
     extend Models::HasActiveRecord
-    _record_model = Offer::Record
-    _error_model = Offer::Error
     class << self
       private
       def _from_record(record)
         new.tap do |offer|
           offer.price = record.price
-          offer.from = User.normalize record.speaker
+          offer.from = Negotiations::Company.normalize record.speaker
         end
       end
     end

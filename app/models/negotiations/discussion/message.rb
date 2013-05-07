@@ -3,8 +3,6 @@ module Negotiations
     class Message
       attr_accessor :from, :content
       extend ::Models::HasActiveRecord
-      error_model = Message::Error
-      record_model = Message::Record
       class << self
         private
         def _from_record(record)

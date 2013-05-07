@@ -11,7 +11,6 @@ class FakeRecord
       end
     end
   end
-
   # returns you pure trash values
   def method_missing(method, *args)
     Faker::Company.bs

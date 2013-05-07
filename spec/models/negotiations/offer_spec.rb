@@ -2,6 +2,24 @@ require 'spec_helper'
 
 describe Negotiations::Offer do
   let(:api) { Negotiations::Offer }
+  describe "::normalize" do
+    let(:offer) { api.normalize @id }
+    before :each do
+      @id = 234
+      @company = ChineseFactory.company
+      api.record_model = ::FakeRecord
+      ::FakeRecord.any_instance.should_receive(:speaker).and_return(@company)
+    end
+    after :each do
+      api.record_model = nil
+    end
+    it "should have generated a valid offer" do
+      offer.should be_a api
+    end
+    it "should be from the correct party" do
+      offer.from.should eq @company
+    end
+  end
   describe "::from_company_with_price" do
     let(:offer) { api.from_company_with_price @company, @price }
     before :each do

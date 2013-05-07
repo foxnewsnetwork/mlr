@@ -22,7 +22,7 @@ module Models
       begin
         self.const_get "Error"
       rescue NameError => e
-        throw DefaultErrorSentence.call self.to_s.concat "::Error"
+        raise NotImplementedError.new DefaultErrorSentence.call self.to_s.concat "::Error"
       end
     end
 
@@ -31,12 +31,12 @@ module Models
       begin
         self.const_get "Record"
       rescue NameError => e
-        throw DefaultErrorSentence.call self.to_s.concat "::Record"
+        raise NotImplementedError.new DefaultErrorSentence.call self.to_s.concat "::Record"
       end
     end
 
     def _from_record(record)
-      throw "Implement Me!"
+      raise NotImplementedError.new("You must implement a way to take the activerecord instance #{record} to an object")
     end
   end
 end
