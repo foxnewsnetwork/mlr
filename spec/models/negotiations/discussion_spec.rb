@@ -24,8 +24,8 @@ describe Negotiations::Discussion do
         ::FakeRecord.any_instance.should_receive(:messages).and_return(@messages)
         ::FakeRecord.any_instance.should_receive(:offers).and_return(@offers)
       end
-      before(:all) { Negotiations::Discussion.record_model = ::FakeRecord }
-      after(:all) { Negotiations::Discussion.record_model = Negotiations::Discussion::Record }
+      before(:each) { Negotiations::Discussion.record_model = ::FakeRecord }
+      after(:each) { Negotiations::Discussion.record_model = nil }
       specify { discussion.should_not be_shit }
       describe "#offer_from" do
         let(:offer) { discussion.offer_from @buyer, @price }

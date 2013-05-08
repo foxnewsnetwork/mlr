@@ -23,6 +23,8 @@ module Negotiations
     class Record < ::ActiveRecord::Base
       self.table_name = "companies"
       attr_accessible :name, :email
+
+      has_many :listings, :class_name => Negotiations::Listing::Record, :foreign_key => "seller_id"
     end
   end
 end

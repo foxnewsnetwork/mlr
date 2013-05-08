@@ -37,5 +37,13 @@ describe Negotiations::Company::Record do
       specify { company.should be_a Negotiations::Company }
       specify { company.company_id.should eq @company_record.id }
     end
+    describe "#listings" do
+      before :each do
+        @listing = FactoryGirl.create(:listing, :seller => @company_record)
+      end
+      specify { @company_record.listings.should respond_to :create }
+      specify { @company_record.listings.should include @listing }
+    end
   end
+
 end

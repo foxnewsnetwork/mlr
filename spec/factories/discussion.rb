@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :discussion, :class => Negotiations::Discussion::Record do |d|
-    listing
-    buyer
+    association :listing
+    association :buyer
   end
 end

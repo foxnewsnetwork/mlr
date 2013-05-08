@@ -15,3 +15,19 @@ Things to do
 
   * Structure for modularity, not just conventional rails organization (stack-
     ing in models, controllers, assets, etc. produces immobile crap)
+
+On Occasional Indeterminisms
+=
+Sometimes, the tests (in particular, has_active_record_spec on should throw 
+NotImplementedError) would just fail for no reason. Then pass again consistently.
+This indeterminism, is from random seed: 29815 
+
+Resolved, as the case is, just need to set things back to nil after mocking with
+FakeRecord
+
+On Language
+=
+[Finding babel](http://www.washingtonpost.com/national/health-science/linguists-identify-15000-year-old-ultraconserved-words/2013/05/06/a02e3a14-b427-11e2-9a98-4be1688d7d84_story.html)
+
+On Schools, Donations, Childrens, and Trains
+=
