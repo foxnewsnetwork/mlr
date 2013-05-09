@@ -2,7 +2,21 @@ Mlr::Application.routes.draw do
 
   devise_for :companies
 
-  get "development/debug"
+  # get "development/debug"
+
+  resources :listing, :only => [] do
+    resources :discussions, :only => [:create], :controller => "negotiations/controllers/listings/discussions"
+  end
+
+  resources :discussion, :only => [:show], :controller => "negotiations/controllers/discussions" do
+    resources :offer, :only => [:create], :controller => "negotiations/controllers/discussions/offers" do
+      member do
+        put "decline"
+        put "accept"
+      end
+    end
+    resources :message, :only => [:create], :controller => "negotiations/controllers/discussions/messages"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,5 +1,11 @@
 class FakeRecord
+  attr_accessor :id
   class << self
+    def find_by_id(id)
+      new.tap do |fr|
+        fr.id = id
+      end
+    end
     # id < 666 = real
     # id >= 666 = fake
     def method_missing(method, *args)

@@ -1,0 +1,134 @@
+Wednesday - Hump Day
+=
+Quite honestly, the fact that I refer to today as a "hump" day is a direct
+reflection of how much I absolutely loathe my job. It is a hurdle, an
+obstacle, some sort of painful trial I must overcome to continue doing what-
+ever it is that is meaningful to me. Is this a common symptom of the employed
+population? If so, why then has life become so devoid of all interest and
+meaning? Since when did we all become cronies slaving away under some nameless
+(or well named and possibly even branded) organization selling quaker oats or
+tapping on a keyboard?
+
+I have become convinced, for as long as I work in San Francisco, I will never
+attain either meaning or happiness. All I do end up doing is wasting away my
+time for meager amounts of money most of which I don't actually need. 
+
+On Modularity Within Rails
+=
+It should come as no surprise to anyone who has used Rails for more than a few
+months that it does not encourage writing modular or reuseable code. Rails, by
+default convention, request the following structure for your app:
+
+  --app
+  |-- model
+    |-- activerecord
+    |-- activerecord
+    |-- ...
+  |-- controller
+    |-- applicationcontroller
+    |-- applicationcontroller
+    |-- ...
+  |-- view
+    |-- [model-name]
+      |-- .erb / .haml view
+  -- config
+    |-- initializer
+      |-- your_initializer
+
+This sort of structure is akin to storing your pants in a drawer for pants, storing
+your shirt in a cabinent for shirts, etc. Naively, it's well organized and the
+structure is possibly reasonable and logic (at least well within the definitions of
+the much lauded MVC framework). Unfortunately, because all your pants are with your
+other pants, you, as the code monkey, will forever be stuck in your closest (place
+of work), doomed to sew up new pants when the old ones fit your closet less well.
+
+Of course, because it is a closet, your place of work will likely never suit you
+like a good getup of jeans, shirt, hat, etc. You find yourself never being able to
+take your favorite getup (code asset) and run away with it to find freedom in the
+world outside your stuffy closet.
+
+So to future devs who read this, which will probably just be me (the writer), please
+structure applications and assets as follows
+
+  --app
+    |-- model
+      |-- forum (in example)
+        |-- views
+          |-- partials
+        |-- api
+          |-- controller
+            |-- controllers
+          |-- apptie (like a railtie, it tells future apps how to use your model)
+        |-- thread
+          |-- activerecord (or other persistence engine)
+          |-- post
+            |-- activerecord
+        |-- user
+          |-- activerecord
+          |-- post
+            |-- activerecord (yes, this probably references the same table as thread::post)
+      |-- other "models"
+    |-- controller
+      |-- application specific controllers
+    |-- views
+      |-- application specific views
+
+Structuring one's project this way allows for immediate gemification and modular version
+control through use of rubygems. The productive programmer can immediately pull the forum
+model out of this app and drop it into its own gem or into another rails project and
+achieve immediate functionality. Code like this increases productivity and is probably
+the biggest reason why certain top-tier programmers are able to churn out highly polished
+production-ready projects over the course of a few hours.
+
+As the programmer, it will be entirely against your employer's wishes for you to write
+code this way. Organizing your application in such a way that you can achieve plug-and-
+play modularity gives you too much freedom and too much power. At any given moment, you
+can pick up a huge chunk of codebase and simply use it yourself in your own application.
+Code in this style does not enforce loyalty because it has code quality. Bear that in mind
+at work. Considering the advantages of this code style, it's amazing not more enterprise
+projects follow these standards.
+
+Fortune Cookies that Get Corrupted
+=
+/ Well, anyway, I was reading this James  \
+| Bond book, and right away I realized    |
+| that like most books, it had too many   |
+| words. The plot was the same one that   |
+| all James Bond books have: An evil      |
+| person tries to blow up the world, but  |
+| James Bond kills him and his henchmen   |
+| and makes love to several attractive    |
+| women. There, that's it: 24 words. But  |
+| the guy who wrote the book took         |
+| *thousands* of words to say it. Or      |
+| consider "The Brothers Karamazov", by   |
+| the famous Russian alcoholic Fyodor     |
+| Dostoyevsky. It's about these two       |
+| brothers who kill their father. Or      |
+| maybe only one of them kills the        |
+| father. It's impossible to tell because |
+| what they mostly do is talk for nearly  |
+| a thousand pages. If all Russians talk  |
+| as much as the Karamazovs did, I don't  |
+| see how they found time to become a     |
+| major world power. I'm told that        |
+| Dostoyevsky wrote "The Brothers         |
+| Karamazov" to raise the question of     |
+| whether there is a God. So why didn't   |
+| he just come right out and say: "Is     |
+| there a God? It sure beats the heck out |
+| of me." Other famous works could easily |
+| have been summarized in a few words:    |
+| bin cascadence.gemspec coverage         |
+| fixtures Gemfile Gemfile.lock lib       |
+| LICENSE.txt pkg Rakefile                |
+| README.markdown spec VERSION "Moby      |
+| Dick" -- Don't mess around with large   |
+| whales because they symbolize nature    |
+| and will kill you. bin                  |
+| cascadence.gemspec coverage fixtures    |
+| Gemfile Gemfile.lock lib LICENSE.txt    |
+| pkg Rakefile README.markdown spec       |
+| VERSION "A Tale of Two Cities" --       |
+\ French people are crazy. -- Dave Barry  /
+ -----------------------------------------
