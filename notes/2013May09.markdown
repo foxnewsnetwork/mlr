@@ -9,3 +9,68 @@ something decidedly unliterature-ish: debian-based coding
 \ Mark Twain                             /
  ----------------------------------------
 
+Microsoft & The Consumer Philosophy
+=
+A friend of mine who works at Microsoft was talking to me about Windows 8 metro,
+which has become known as Microsoft's Gamble. The gamble being that touchscreens
+and tablets - the stuff that metro and 8 were made for - were the way of the
+future and whoever doesn't get on board the train to the future be damned.
+Obviously, whatever backward hillbilly who doesn't own some form of tablet must
+not be worth supporting.
+
+Quite a strong stance for a company that has the advantage of momentum, corporate
+history, and public goodwill. If I was in charge of any sort of decision making at
+Microsoft (I'm not, and there's no reason why they would bother with my opinions
+anyway), I would've hedged my bets and released a windows 8 that would be essentially
+the EXACT same shit as windoes 7 except for differing branding and possibly minor
+UI changes in addition to the vastly different 8 metro mode... But my MSFT-employed
+friend gave me MS's reason for their decision. I will paraphrase here:
+  
+  > Users don't know what they want, so they need to be taught and trained into
+  > wanting whatever it is we have to sell.
+
+The statement seems to make sense; after all, it works in America - how else would
+one explain the prolifterating shamwow info-mercials, penis-enlarge banner ads, or
+the ever unnecessary sales pitch for another style of blender. But why generalized
+to only Americans? People in Asia, Europe, or Africa can be just as much a tool to
+their corporations (or countries) as people here.
+
+But then, the thought occured do we truly not know what we want? Or is it more the
+case we just don't know how to get what we want? Because truly, at our basic core,
+the things we #can# want are truly few and all rather simple. We want to sustenace,
+respect of others, sex (usually if male), attention (usually if female), and meaning
+(if fortunate enough to live within the first world).
+
+Every decision we ever make falls into one of these categories and, as such, every
+product ever sold to us has convinced us that it will be able to help us achieve one
+of those:
+
+  > "X, tastes great, helps you lose weight" -> sustenance + attention
+  > "Y makes your Z more convenient" -> implies time for the things other than Z
+
+So let me correct Microsoft's attitude towards its user to what it really should
+have been had it not been for some ridiculously dumb fuckup up top:
+
+  > Users want to look cool to their friends, make money for themselves, and find
+  > meaning in their lives. They don't know how to do it, so we'll trick them into
+  > thinking getting a windows tablet will be the key to doing it.
+
+The restatement suddenly makes it clear how marketing and management should have
+approach the metro + windows 8 project.
+
+It is immediately obvious due to the poor typing interface, it is near impossible to
+do work (thus make money) on the tablet. In addition, MS should realize that the
+tablet, by it's very nature, is a consumption-based tool, not a production-based tool.
+One does not "produce" through "consumption".
+
+It is not immediately obvious that a windows tablet will elevate one in the eyes of
+his or her friends. Because it is difficult to produce on a tablet, it is hard to
+imagine any audience passed their teenage years who would be impressed by it.
+
+Finding meaning, as with all things, is extremely iffy for the 8 tablet as it is for
+any and all products. But, as it is, tools that help an user attain meaning usually
+enables the user to engage in some sort of action that he or she cannot engage in
+easily previously. 
+
+And therein is Microsoft's gamble; someone somewhere some time will discover a use
+for the tablet.
