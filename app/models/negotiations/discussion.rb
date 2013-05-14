@@ -11,7 +11,7 @@ module Negotiations
           d.buyer = Company.normalize record.buyer 
           d.seller = Company.normalize record.seller
           d.messages = record.messages.map { |message| Discussion::Message.normalize message }
-          d.offers = record.offers.map { |offer| Offer.normalize offer }
+          d.offers = record.offers.map { |offer| Negotiations::Offer.normalize offer }
           d.discussion_id = record.id
         end
       end

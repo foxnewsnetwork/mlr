@@ -5,15 +5,15 @@ module Negotiations
         expose(:discussion) { Negotiations.from_discussion_id params[:discussion_id] }
 
         def create
-          respond_with discussion.create_offer params[:offer]
+          render :json => discussion.offer_from(params[:offer][:company], params[:offer][:price])
         end
 
         def decline
-          respond_with discussion.decline_offer params[:offer]
+          render :json => discussion.decline_offer!(current_company, params[:id])
         end
 
         def accept
-          respond_with discussion.accept_offer params[:offer]
+          render :json => discussion.accept_offer!(current_company, params[:id])
         end
 
       end

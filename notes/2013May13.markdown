@@ -1,0 +1,83 @@
+Another Shitty Monday
+=
+I don't know how much more of working for this shitty-ass corporation
+in San Francisco I can take. Not only am I learning nothing from them,
+I feel every waking moment of work I put into the company results in that
+moment being forever wasted. If this is the real world, I'd much rather
+go back to academia / freelance.
+
+Here's my list of reasons why I absolute loathe my current place of work:
+
+# Technical Reasons
+* Lack of comprehensive test suite means any new feature that gets dev'd
+  out can mostly only be debugged and fixed in production.
+* Unnecessarily steep learning curve for everything due to stupid decisions
+  in inital code-base design stage
+* Features are proposed, built, and released with absolutely no consideration
+  of market necessity as there are no a/b tests, marketing surveys, etc.
+* Every single peice of client-side javascript code is written in procedural
+  javascript and coupled extremely intimately with the monorail app, making
+  everything anyone ever builds for iOffer remain at iOffer - absolutely 0
+  modularity
+* Follows standard rails convention for organizing by controller, model, 
+  and view (and even then, we do so inconsistently) making everything highly
+  unmodular and absolutely a waste of time
+* No database data integrity or consistency, but a good portion of application
+  code depends on the database for function
+* 2013 and still on rails 2.3 and REE 187
+* No unit tests, can't even begin to write unit tests because of difficulty of
+  loading up the test environment
+
+# Management / Personal / Cultural Reasons
+* I apparently can't build anything right
+* No decent way to programatically test, but manager is nit-picky as all hell
+* Not allowed to solve problems the simplest way due to some abstract fear of
+  "scalability issues" and instead must invent complicated hacks to go on top
+  of already complicated hacks
+* ~3 to 4 hours of commute each day
+* I can't get along with SFers and East Coasters
+* I personally loathe the big city
+* Long commute leads to unhealthy diet
+* No communication on company vision, plans for the future, or even progress
+  report on right now from management
+* "Done is better than perfect" attitude leads to the creation of stupid shit
+* "Don't fix it if it isn't really highly noticeably broken" attitude prevents
+  refactoring and keeps alive potential problems
+* The company can't show that it needs what we build
+* Priority is on attaching more chrome and crap on top of existing chrome and
+  crap instead of fixing up and refactoring
+
+Future Solutions
+=
+  > It's not a problem if you can't fix it
+So, here is how I would fix these problems
+
+# Technical
+* Focus more on unit, functional, and a/b testing than feature development
+* Follow logical division of responsibility to split up code, not rails convention
+* Gemify everything and have only a dumb rails app where the gems tell it how to
+  do stuff... i.e. gems plug-and-play into a generic rails app
+* Decouple javascript and css from rails; build it separately and have it communicate
+  through standard http api with the application
+* Refactor all day everyday and keep up with ruby / rails
+* Cb + Cv * time + Ca * time * time ; NEVER increase your coding base (Cb) at the
+  cost of decreasing your coding velocity (Cv) or worse your coding acceleration (Ca).
+* If you do wind up having to increase Cb at the cost of Cv or Ca, refactor ASAP
+
+# Management
+* Only hire people who live within 5-10 miles of the office or let everyone wfh
+* Don't hire for "cultural diversity", hire individuals just like you
+* Constantly ask "why"
+* Done is only better than perfect if you were retarded enough to sell out to someone
+  super early. Write code such that it not only solves today's problems, it also
+  helps with making solving tomorrows problems easier
+* Fix it before it breaks; prevention is always better than cure
+* Follow the scientific method; propose that the company needs feature X because
+  X would help the company improve Y (where Y is a basic metric like income), then
+  a/b test and proveably show that it does
+* Less chrome and crap, instead simplify.
+
+Notes For Myself
+=
+Never again work for a company in SF, go work for your mom in Camarillo over a company
+based in SF.

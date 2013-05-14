@@ -5,7 +5,7 @@ module Negotiations
         expose(:discussion) { Negotiations.from_discussion_id params[:discussion_id] }
         
         def create
-          respond_with discussion.create_message params[:message]
+          render :json => discussion.message_from(params[:message][:company], params[:message][:text])
         end
         
       end
